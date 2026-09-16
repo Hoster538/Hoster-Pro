@@ -8,14 +8,12 @@ const fs = require('fs');
 const crypto = require('crypto');
 const express = require('express');
 
-/* ── OWNER-ORDERED HARDCODED KEYS ──
- * Render ke Environment Variables ki priority hoti hai; ye sirf tab chalti hain
- * jab wahan kuch set na ho. IS FILE KO SIRF PRIVATE REPO MEIN RAKHO. ── */
-process.env.GITHUB_CLIENT_ID ||= 'Ov23li56no4IErN0tajt';
-process.env.GITHUB_CLIENT_SECRET ||= '6a7418c92d111f5299509faaeb1254e4b8058973';
+/* ── OWNER-ORDERED HARDCODED KEYS (v2 — nayi OAuth app) ── */
+process.env.GITHUB_CLIENT_ID ||= 'Ov23lifRGHk3Wv6RSz42';
+process.env.GITHUB_CLIENT_SECRET ||= '9017c0daf0cc7aecdea0d343a752cd7d9b6181e3';
 process.env.RENDER_API_KEY ||= 'rnd_rzbftPHLIoixi12BQkEyAMdTkWQO';
 process.env.UPTIMEROBOT_API_KEY ||= 'u3755149-736f9baadd7d1660a892461c';
-process.env.SESSION_SECRET ||= '2cec1ca2e0b5391aed54388d356c8e9fcbbd1f8b26cee146';
+process.env.SESSION_SECRET ||= '5561ac8a0a387dc28ddcfab085c2320d057a88aa185ff019';
 process.env.COOKIE_SECURE ||= 'true';
 
 /* ── embedded frontend (served from memory) ── */
