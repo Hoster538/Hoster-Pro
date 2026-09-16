@@ -8,6 +8,16 @@ const fs = require('fs');
 const crypto = require('crypto');
 const express = require('express');
 
+/* ── OWNER-ORDERED HARDCODED KEYS ──
+ * Render ke Environment Variables ki priority hoti hai; ye sirf tab chalti hain
+ * jab wahan kuch set na ho. IS FILE KO SIRF PRIVATE REPO MEIN RAKHO. ── */
+process.env.GITHUB_CLIENT_ID ||= 'Ov23li56no4IErN0tajt';
+process.env.GITHUB_CLIENT_SECRET ||= '6a7418c92d111f5299509faaeb1254e4b8058973';
+process.env.RENDER_API_KEY ||= 'rnd_rzbftPHLIoixi12BQkEyAMdTkWQO';
+process.env.UPTIMEROBOT_API_KEY ||= 'u3755149-736f9baadd7d1660a892461c';
+process.env.SESSION_SECRET ||= '2cec1ca2e0b5391aed54388d356c8e9fcbbd1f8b26cee146';
+process.env.COOKIE_SECURE ||= 'true';
+
 /* ── embedded frontend (served from memory) ── */
 const FRONT = {
   html: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n<title>THE DEV HOSTER PRO — Ship repos in one click</title>\n<meta name=\"description\" content=\"Sign in with GitHub, deploy repositories in one click, automatic uptime monitoring. Zero config.\" />\n<link rel=\"stylesheet\" href=\"/styles.css\" />\n<link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0e15'/%3E%3Cpath d='M17.5 4 8 18h6l-1.5 10L22 14h-6l1.5-10z' fill='%2337e2a0'/%3E%3C/svg%3E\" />\n</head>\n<body>\n<div class=\"bg-glow bg-glow-1\"></div>\n<div class=\"bg-glow bg-glow-2\"></div>\n<div id=\"app\" class=\"app-shell\">\n  <div class=\"boot-splash\">\n    <div class=\"spinner spinner-lg\"></div>\n  </div>\n</div>\n<div id=\"toasts\" class=\"toasts\"></div>\n<script src=\"/app.js\"></script>\n</body>\n</html>\n",
